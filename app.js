@@ -18,7 +18,7 @@ app.use(express.json());
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
-
+// API version `v1` 
 app.get('/api/v1/tours', (req, res) => {
   res.status(200).json({
     status: 'success',
