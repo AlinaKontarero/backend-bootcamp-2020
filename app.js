@@ -5,6 +5,11 @@ const app = express();
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+  console.log('hello from the Middleware!');
+  next();
+})
+
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
@@ -100,7 +105,7 @@ app
   .delete(deleteTour);
 
 
-const port = 3000;
+const port = 3001;
 
 app.listen(port, () => {
   console.log(`App running on port ${port}...`);
