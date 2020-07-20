@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
-const tourController = require('./controllers/tourController')
+const tourController = require('../controllers/tourController')
 
 app.use('/api/v1/tours', router)
 
