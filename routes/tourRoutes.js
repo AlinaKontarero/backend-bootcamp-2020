@@ -3,6 +3,8 @@ const app = express();
 const router = express.Router();
 const tourController = require('../controllers/tourController')
 
+router.param('id', tourController.checkID)
+
 app.use('/api/v1/tours', router)
 
 router
